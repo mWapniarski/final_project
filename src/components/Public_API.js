@@ -23,7 +23,8 @@ class Public_API extends Component {
         const lastPrice = this.state.param;
 
         return (
-            <h1>{lastPrice}</h1>
+            <div id="btc-price" className="main_width">
+                Current price: {lastPrice} PLN</div>
         )
     }
 }
