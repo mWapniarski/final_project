@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    margin: 0 auto;
+    width: 500px;
+    border: 1px solid red;
+}
+
+.main_width {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid red;
+    background-color: lightcyan;
+
+}
+
+.btc-price {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
