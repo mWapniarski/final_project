@@ -6,6 +6,9 @@ class Trade extends Component {
         this.props.buyBTC()
     }
 
+    handleSell = () => {
+        this.props.sellBTC()
+    }
 
     render() {
 
@@ -16,7 +19,8 @@ class Trade extends Component {
                      onClick={this.handleBuy}>BUY
                 </div>
                 <div id="btn-right"
-                     className="trade-button">SELL
+                     className="trade-button"
+                     onClick={this.handleSell}>SELL
                 </div>
             </div>
         )

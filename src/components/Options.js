@@ -23,22 +23,21 @@ class Options extends Component {
     }
 
     handleDep = () => {
-        this.props.setAmountPLN (parseInt(prompt("How much do You want to deposit?")))
-
+        this.props.setAmountPLN(parseInt(prompt("How much do You want to deposit?")))
     }
 
     render() {
 
         let show;
         const {pln, btc} = this.props;
-        if (this.state.show==="Balance") {
-            show=<Balance
+        if (this.state.show === "Balance") {
+            show = <Balance
                 amountPLN={pln}
                 amountBTC={btc}
-                priceBtc = {this.props.btcPrice}
+
             />
-        } else if (this.state.show==="TradeHistory") {
-            show=<TradeHistory/>
+        } else if (this.state.show === "TradeHistory") {
+            show = <TradeHistory/>
 
         }
         return (

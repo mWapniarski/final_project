@@ -8,16 +8,25 @@ import Options from "./Options";
 
 class App extends Component {
     state = {
-        btcPrice: 0,
+        buy: 0,
+        sell: 0,
         amountPLN: 0,
         amountBTC: 0
     }
 
     setBuyPrice = (price) => {
         this.setState({
-            btcPrice: price
+            buy: price
         })
     }
+
+    setSellPrice = (price) => {
+        this.setState({
+            sell: price
+        })
+    }
+
+
     setAmountPLN = (price) => {
         this.setState({
             amountPLN: price
@@ -27,7 +36,14 @@ class App extends Component {
     buyBTC = () => {
         this.setState({
             amountPLN: 0,
-            amountBTC: this.state.amountBTC + (this.state.amountPLN / this.state.btcPrice)
+            amountBTC: this.state.amountBTC + (this.state.amountPLN / this.state.sell)
+        })
+    }
+
+    sellBTC = () => {
+        this.setState({
+            amountBTC: 0,
+            amountPLN: this.state.amountPLN + (this.state.amountBTC * this.state.buy)
         })
     }
 
@@ -36,14 +52,17 @@ class App extends Component {
             <div id="container">
                 {/*<MarketOverview/>*/}
                 <Header/>
-                <CurrentPrice setBuyPrice={this.setBuyPrice}/>
-                <Trade buyBTC={this.buyBTC}
+                <CurrentPrice setBuyPrice={this.setBuyPrice}
+                              setSellPrice={this.setSellPrice}
                 />
-                <Options pln= {this.state.amountPLN}
-                         btc= {this.state.amountBTC}
-                         btcPrice = { this.state.btcPrice}
-                         setAmountPLN = {this.setAmountPLN}
-
+                <Trade buyBTC={this.buyBTC}
+                       sellBTC={this.sellBTC}
+                />
+                <Options pln={this.state.amountPLN}
+                         btc={this.state.amountBTC}
+                         btcPrice={this.state.buy}
+                         btcPrice2={this.state.sell}
+                         setAmountPLN={this.setAmountPLN}
                 />
             </div>
         )

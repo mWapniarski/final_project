@@ -9,8 +9,9 @@ class CurrentPrice extends Component {
 
     getSellPrice = () => {
         fetch('https://bitbay.net/API/Public/BTCPLN/orderbook.json')
-            .then( resp => resp.json() )
-            .then( resp => {
+            .then(resp => resp.json())
+            .then(resp => {
+                this.props.setSellPrice(resp.asks[0][0])
                 this.setState({
                     sell: resp.asks
                 })
@@ -19,9 +20,8 @@ class CurrentPrice extends Component {
 
     getBuyPrice = () => {
         fetch('https://bitbay.net/API/Public/BTCPLN/orderbook.json')
-            .then( resp => resp.json() )
-            .then( resp => {
-                console.log(resp)
+            .then(resp => resp.json())
+            .then(resp => {
                 this.props.setBuyPrice(resp.bids[0][0])
                 this.setState({
                     buy: resp.bids
@@ -32,14 +32,14 @@ class CurrentPrice extends Component {
     componentDidMount() {
         const refreshTime = 10 * 1000;
 
-        this.getSellPrice ();
-        this.getBuyPrice ();
+        this.getSellPrice();
+        this.getBuyPrice();
 
-        setInterval( () => {
+        setInterval(() => {
             this.getSellPrice()
         }, refreshTime);
 
-        setInterval( () => {
+        setInterval(() => {
             this.getBuyPrice()
         }, refreshTime);
     }
@@ -51,8 +51,8 @@ class CurrentPrice extends Component {
             return null;
         }
 
-        const sellPrice = parseInt(this.state.buy).toFixed(0);
-        const buyPrice = parseInt(this.state.sell).toFixed(0);
+        const sellPrice = parseInt(this.state.buy).toFixed(2);
+        const buyPrice = parseInt(this.state.sell).toFixed(2);
 
         return (
             <>
