@@ -11,27 +11,38 @@ body {
 
 #container {
     width: 600px;
-    height: 800px;
     margin: 0 auto;
-    background-color: #fff9ea;
+    background: url("../images/papyrus.png");
 
-    .main_width {
+
+//
+//========================================================
+//This pattern is downloaded from www.subtlepatterns.com
+//If you need more, that's where to get'em.
+//========================================================
+//
+
+
+
+.main_width {
         width: 100%;
         padding: 0 15px;
-        background-color: ghostwhite;
     }
 
 }
 
-
-
+#marketOverview {
+    margin-bottom: 20px;
+}
 
 
 #header {
     font-size: 1.75em;
+    font-style: italic;
+    letter-spacing: 2px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
 
     #title {
@@ -49,42 +60,85 @@ body {
     }
 }
 
-
-#btc-price {
-    font-size: 3em;
-    padding: 20px 0;
-    margin-bottom: 10px;
-
+#price {
+    display: flex;
+    justify-content: space-between;
+    #btc-buy-price, #btc-sell-price {
+        font-size: 2.5em;
+        padding: 20px 0;
+        margin-bottom: 20px;
+    }
 }
 
 
 #trade {
     display: flex;
     justify-content: space-evenly;
-
+    margin-bottom: 20px;
     .trade-button {
-        font-size: 4em;
+        font-size: 4.5em;
         font-weight: bold;
         border-radius: 7px;
-        padding: 10px 20px;
+        padding: 20px 30px;
         &:hover {
             cursor: pointer;
         }
     }
 
     #btn-left {
-        background-color: green;
+        background-color: #007300;
         &:hover {
-            background-color: darken(green, 3%);
+            background-color: lighten(green, 3%);
         }
 
     }
 
     #btn-right {
-        background-color: red;
+        background-color: #cc0000;
         &:hover {
-            background-color: darken(red, 8%);
+            background-color: lighten(red, 8%);
         }
 
     }
 }
+
+#balance {
+    height: 250px;
+    font-size: 2.25em;
+    text-align: right;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#tradeHistory {
+    height: 250px;
+    margin-bottom: 20px;
+
+}
+
+#wallet {
+    margin-bottom: 20px;
+    .wallet-row {
+        display: flex;
+        justify-content: space-around;
+
+        .wallet-button {
+            width: 10em;
+            font-size: 1.75em;
+            padding: 10px 15px;
+            border-radius: 7px;
+            margin-bottom: 10px;
+            background-color: lightblue;
+            opacity: 0.5;
+
+            &:hover {
+                cursor: pointer;
+                background-color: lighten(lightblue, 3%);
+            }
+        }
+    }
+}
+
