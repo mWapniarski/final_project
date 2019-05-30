@@ -2,6 +2,11 @@ import React, {Component} from "react";
 
 class Trade extends Component {
 
+
+    state = {
+        price: "",
+    }
+
     handleBuy = () => {
         this.props.buyBTC()
     }

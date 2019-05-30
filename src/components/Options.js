@@ -52,8 +52,7 @@ class Options extends Component {
                         <div className="wallet-button"
                              onClick={this.handleTradeHistory}>Trade History
                         </div>
-                    </div>
-                    <div className="wallet-row">
+
                         <div className="wallet-button"
                              onClick={this.handleDep}>Deposit
                         </div>
