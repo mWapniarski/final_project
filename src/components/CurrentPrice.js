@@ -56,12 +56,12 @@ class CurrentPrice extends Component {
 
         return (
             <>
-                <div id="price">
-                    <div id="btc-buy-price" className="main_width">
+                <div id="price" className="main_width">
+                    <div id="btc-buy-price">
                         Buy price:<br/>
                         {buyPrice} PLN
                     </div>
-                    <div id="btc-sell-price" className="main_width">
+                    <div id="btc-sell-price">
                         Sell price:<br/>
                         {sellPrice} PLN
                     </div>

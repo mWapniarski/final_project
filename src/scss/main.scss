@@ -6,20 +6,20 @@
 
 body {
     text-align: center;
-    height: 100vh;
     font-family: 'Patua One', cursive, sans-serif;
     ul {
         list-style-type: none;
         padding: 10px 0;
     }
+    a {
+        text-decoration: none;
+    }
 }
 
 #container {
     width: auto;
-
     margin: 0 auto;
     background: url("../images/papyrus.png");
-
 
 //
 //========================================================
@@ -28,14 +28,10 @@ body {
 //========================================================
 //
 
-
-
-
 .main_width {
         width: 100%;
         padding: 0 25px;
     }
-
 }
 
 @mixin boxShadow() {
@@ -44,13 +40,16 @@ body {
     box-shadow: 10px 10px 25px 0px rgba(138,138,138,1);
 }
 
-#marketOverview {
-    //margin-bottom: 20px;
+@mixin bg-image () {
+    background-image: url("../images/bitcoin-icon.png");
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.8;
 }
 
-
 #header {
-    font-size: 2.5em;
+    font-size: 3.75em;
     font-style: italic;
     letter-spacing: 2px;
     display: flex;
@@ -58,45 +57,23 @@ body {
     justify-content: space-around;
     align-items: center;
     @include boxShadow;
-
-
-    #title {
-        width: 50%;
-        padding: 30px 5px;
-
-    };
-
-    #btc-icon {
-        width: 50%;
-        height: 80%;
-        background-image: url("../images/bitcoin-icon.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-
-    }
+    @include bg-image;
 }
 
 #price {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     @include boxShadow;
-
     #btc-buy-price, #btc-sell-price {
         font-size: 2.5em;
         padding: 20px 0;
-        //margin: 20px 0;
-
     }
 }
 
-
 #trade {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     @include boxShadow;
-
-
     .trade-button {
         font-size: 3em;
         font-weight: bold;
@@ -106,12 +83,9 @@ body {
         padding: 20px 30px;
         transition: ease-in-out 100ms;
         @include boxShadow;
-
-
         &:hover {
             cursor: pointer;
             transform: scale(1.1);
-
         }
     }
 
@@ -120,7 +94,6 @@ body {
         &:hover {
             background-color: lighten(green, 3%);
         }
-
     }
 
     #btn-right {
@@ -140,7 +113,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    //margin: 20px 0;
     @include boxShadow;
 
 
@@ -155,15 +127,10 @@ body {
     .sellList {
         color: #c10000;
     }
-
 }
 
-
-
 #wallet {
-    //margin: 20px 0;
     @include boxShadow;
-
 
     .wallet-row {
         display: flex;
@@ -178,9 +145,6 @@ body {
             background-color: lightblue;
             box-shadow: 10px 10px 20px 0 rgba(148,148,148,1);
             transition: ease-in-out 100ms;
-
-
-
             &:hover {
                 cursor: pointer;
                 transform: scale(1.1);
